@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_laundry_app/utils/fade_animation.dart';
+import 'package:rijix_laundy_app/utils/fade_animation.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DetailPage extends StatefulWidget {

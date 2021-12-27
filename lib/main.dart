@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_laundry_app/pages/details.dart';
-import 'package:flutter_laundry_app/pages/picktime.dart';
-import 'package:flutter_laundry_app/utils/fade_animation.dart';
-import 'package:flutter_laundry_app/utils/slide_route.dart';
+import 'package:rijix_laundy_app/pages/details.dart';
+import 'package:rijix_laundy_app/pages/home_page.dart';
+import 'package:rijix_laundy_app/pages/picktime.dart';
+import 'package:rijix_laundy_app/pages/test_page.dart';
+import 'package:rijix_laundy_app/utils/fade_animation.dart';
+import 'package:rijix_laundy_app/utils/slide_route.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_laundry_app/theme/colors.dart';
+import 'package:rijix_laundy_app/theme/colors.dart';
+import 'package:rijix_laundy_app/pages/test_page.dart';
+import 'package:rijix_laundy_app/widget/appbar.dart';
+
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: (settings) {
@@ -28,8 +33,8 @@ class _MyAppState extends State<MyApp> {
   int indexnav = 0;
 
   final screen = [
-    Center(child: Text("Home", style: TextStyle(fontSize: 72),)),
-    Center(child: Text("History", style: TextStyle(fontSize: 72),)),
+    HomePage(),
+    TestPage(),
     Center(child: Text("Acount", style: TextStyle(fontSize: 72),)),
   ];
   
@@ -46,50 +51,45 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF1F1F1),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-        title: Text('Laundry',
-            style: GoogleFonts.inter(
-                fontSize: 16,
-                color: Colors.black,
-                fontWeight: FontWeight.w600)),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
-          onPressed: () {},
-        ),
-      ),
+      backgroundColor: AppColor.whitebg,
+      
       
       body: screen[indexnav],
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
           
           backgroundColor: Colors.white,
-          indicatorColor: Colors.greenAccent.shade100,
+          indicatorColor: AppColor.greenbg,
           labelTextStyle: MaterialStateProperty.all(
-            TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+            TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: AppColor.grey),
             )
           ),
         child: NavigationBar(
           height: 67,
           selectedIndex: indexnav,
+          labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+          animationDuration: Duration(seconds: 1),
           onDestinationSelected: (indexnav)=>
           setState( () => this.indexnav = indexnav),
           destinations: [
             NavigationDestination(
-              icon: Icon(Icons.home_outlined),
-              selectedIcon: Icon(Icons.home_rounded),
+              icon: Icon(Icons.home_outlined, 
+              color: AppColor.grey,),
+              selectedIcon: Icon(Icons.home_rounded,
+              color: AppColor.green,),
               label: 'Home',
             ),
               NavigationDestination(
-              icon: Icon(Icons.view_agenda_outlined),
-              selectedIcon: Icon(Icons.view_agenda_rounded),
+              icon: Icon(Icons.view_agenda_outlined,
+              color: AppColor.grey,),
+              selectedIcon: Icon(Icons.view_agenda_rounded,
+              color: AppColor.green,),
               label: 'History',
+              
             ),NavigationDestination(
-              icon: Icon(Icons.account_box_outlined),
-              selectedIcon: Icon(Icons.account_box_rounded, color: Color(0xFF6DC1A4),),
+              icon: Icon(Icons.account_box_outlined,
+              color: AppColor.grey,),
+              selectedIcon: Icon(Icons.account_box_rounded, color: AppColor.green,),
               label: 'Account',
             ),
           ],),
