@@ -13,4 +13,9 @@ flutter pub get
 flutter run
 ```
 
+<p style="float: left;">
+  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/home.png" width="40%" height="850px"/>
+  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/order_detail.png" width="40%" height="850px"/>
+  
+</p>
 
