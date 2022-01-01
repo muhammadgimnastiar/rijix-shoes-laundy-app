@@ -96,4 +96,8 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
+
+  getWidget(){
+    return (indexnav==0)?HomePage():Container();
+  }
 }

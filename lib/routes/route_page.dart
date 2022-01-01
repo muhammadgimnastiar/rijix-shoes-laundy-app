@@ -14,7 +14,7 @@ class RoutePage extends StatelessWidget {
       routes: {
         '/home_page' : (context) => HomePage(),
         '/detail_order': (context) => DetailPage(),
-         '/detail_order': (context) => PickTimePage(),
+         '/pick_time': (context) => PickTimePage(),
       },
     );
   }

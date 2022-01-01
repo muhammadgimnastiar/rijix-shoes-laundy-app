@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rijix_laundy_app/theme/colors.dart';
 import 'package:rijix_laundy_app/utils/fade_animation.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,12 +12,10 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage> {
   Map<String, Map<String, int>> order = {
-    'shirt': {'price': 3, 'total': 0},
-    'short': {'price': 2, 'total': 0},
-    'trouser': {'price': 5, 'total': 0},
-    'jacket': {'price': 5, 'total': 0},
-    'dress': {'price': 5, 'total': 0},
-    'others': {'price': 2, 'total': 0}
+    'school': {'price': 10000, 'total': 0},
+    'sneakers': {'price': 15000, 'total': 0},
+    'work': {'price': 20000, 'total': 0},
+    'sport': {'price': 13000, 'total': 0},
   };
   int totalPrice = 0;
 
@@ -28,7 +27,11 @@ class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     Widget option(
-        {String? image, String? name, int? price, String? type, int? delay}) {
+        {String? image,
+        String? name,
+        String? price,
+        String? type,
+        int? delay}) {
       return FadeAnimation(
         delay: delay,
         child: Container(
@@ -40,7 +43,7 @@ class _DetailPageState extends State<DetailPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/images/wears/$image',
+                  'assets/images/$image',
                   width: 48,
                 ),
                 const SizedBox(
@@ -54,7 +57,7 @@ class _DetailPageState extends State<DetailPage> {
                     const SizedBox(
                       height: 2,
                     ),
-                    Text('\$$price',
+                    Text('$price',
                         style: GoogleFonts.inter(
                             color: Colors.pink, fontWeight: FontWeight.w600))
                   ],
@@ -87,7 +90,7 @@ class _DetailPageState extends State<DetailPage> {
                 SizedBox(
                   width: 24,
                   child: Center(
-                    child: Text('${order[type]!['total']}',
+                    child: Text('${order[type]?['total']}',
                         style: GoogleFonts.inter(fontWeight: FontWeight.w700)),
                   ),
                 ),
@@ -145,44 +148,32 @@ class _DetailPageState extends State<DetailPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 option(
-                    image: 'shirt.png',
-                    name: 'T-Shirt',
-                    price: 3,
-                    type: 'shirt',
+                    image: 'school.png',
+                    name: 'School wash',
+                    price: '10.000',
+                    type: 'school',
                     delay: 150),
                 option(
-                    image: 'shorts.png',
+                    image: 'sneakers.png',
                     name: 'Short',
-                    price: 2,
-                    type: 'short',
+                    price: '15.000',
+                    type: 'sneakers',
                     delay: 300),
                 option(
-                    image: 'trousers.png',
-                    name: 'Trouser',
-                    price: 5,
-                    type: 'trouser',
+                    image: 'work.png',
+                    name: 'Work wash',
+                    price: '20.000',
+                    type: 'work',
                     delay: 450),
                 option(
-                    image: 'jacket.png',
-                    name: 'Jacket',
-                    price: 5,
-                    type: 'jacket',
+                    image: 'sport.png',
+                    name: 'Sport wash',
+                    price: '13.000',
+                    type: 'sport',
                     delay: 600),
-                option(
-                    image: 'dress.png',
-                    name: 'Dress',
-                    price: 5,
-                    type: 'dress',
-                    delay: 750),
-                option(
-                    image: 'tie.png',
-                    name: 'Others',
-                    price: 2,
-                    type: 'others',
-                    delay: 900),
                 FadeAnimation(
                   delay: 900,
-                  child: Text('Total Price \$$totalPrice',
+                  child: Text('Total Price: Rp $totalPrice',
                       style: GoogleFonts.inter(
                           fontSize: 24,
                           fontWeight: FontWeight.w700,
@@ -206,11 +197,11 @@ class _DetailPageState extends State<DetailPage> {
                 height: 60,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(12),
+                  color: AppColor.green,
+                  borderRadius: BorderRadius.circular(30),
                 ),
                 child: Center(
-                  child: Text('Done',
+                  child: Text('Checkout',
                       style: GoogleFonts.inter(
                           fontSize: 16,
                           fontWeight: FontWeight.w700,
