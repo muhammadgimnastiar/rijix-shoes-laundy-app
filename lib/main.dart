@@ -3,12 +3,9 @@ import 'package:rijix_laundy_app/pages/details.dart';
 import 'package:rijix_laundy_app/pages/home_page.dart';
 import 'package:rijix_laundy_app/pages/picktime.dart';
 import 'package:rijix_laundy_app/pages/test_page.dart';
-import 'package:rijix_laundy_app/utils/fade_animation.dart';
+import 'package:rijix_laundy_app/pages/transaksi._page.dart';
 import 'package:rijix_laundy_app/utils/slide_route.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:rijix_laundy_app/theme/colors.dart';
-import 'package:rijix_laundy_app/pages/test_page.dart';
-import 'package:rijix_laundy_app/widget/appbar.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -34,10 +31,14 @@ class _MyAppState extends State<MyApp> {
 
   final screen = [
     HomePage(),
-    TestPage(),
-    Center(child: Text("Acount", style: TextStyle(fontSize: 72),)),
+    TransaksiPage(),
+    Center(
+        child: Text(
+      "Acount",
+      style: TextStyle(fontSize: 72),
+    )),
   ];
-  
+
   final List<Map<String, String>> services = [
     {'name': 'School wash', 'image': 'school.png'},
     {'name': 'Sneacker wash', 'image': 'sneakers.png'},
@@ -47,57 +48,69 @@ class _MyAppState extends State<MyApp> {
 
   int? selected;
 
- 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.whitebg,
-      
-      
       body: screen[indexnav],
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
-          
-          backgroundColor: Colors.white,
-          indicatorColor: AppColor.greenbg,
-          labelTextStyle: MaterialStateProperty.all(
-            TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: AppColor.grey),
-            )
-          ),
+            backgroundColor: Colors.white,
+            indicatorColor: AppColor.greenbg,
+            labelTextStyle: MaterialStateProperty.all(
+              TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                  color: AppColor.green),
+            )),
         child: NavigationBar(
           height: 67,
           selectedIndex: indexnav,
           labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           animationDuration: Duration(seconds: 1),
-          onDestinationSelected: (indexnav)=>
-          setState( () => this.indexnav = indexnav),
+          onDestinationSelected: (indexnav) =>
+              setState(() => this.indexnav = indexnav),
           destinations: [
             NavigationDestination(
-              icon: Icon(Icons.home_outlined, 
-              color: AppColor.grey,),
-              selectedIcon: Icon(Icons.home_rounded,
-              color: AppColor.green,),
+              icon: Icon(
+                Icons.home_outlined,
+                color: AppColor.grey,
+              ),
+              selectedIcon: Icon(
+                Icons.home_rounded,
+                color: AppColor.green,
+              ),
               label: 'Home',
             ),
-              NavigationDestination(
-              icon: Icon(Icons.view_agenda_outlined,
-              color: AppColor.grey,),
-              selectedIcon: Icon(Icons.view_agenda_rounded,
-              color: AppColor.green,),
-              label: 'History',
-              
-            ),NavigationDestination(
-              icon: Icon(Icons.account_box_outlined,
-              color: AppColor.grey,),
-              selectedIcon: Icon(Icons.account_box_rounded, color: AppColor.green,),
-              label: 'Account',
+            NavigationDestination(
+              icon: Icon(
+                Icons.view_agenda_outlined,
+                color: AppColor.grey,
+              ),
+              selectedIcon: Icon(
+                Icons.view_agenda_rounded,
+                color: AppColor.green,
+              ),
+              label: 'Transaksi',
             ),
-          ],),
+            NavigationDestination(
+              icon: Icon(
+                Icons.account_box_outlined,
+                color: AppColor.grey,
+              ),
+              selectedIcon: Icon(
+                Icons.account_box_rounded,
+                color: AppColor.green,
+              ),
+              label: 'Profile',
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  getWidget(){
-    return (indexnav==0)?HomePage():Container();
+  getWidget() {
+    return (indexnav == 0) ? HomePage() : Container();
   }
 }

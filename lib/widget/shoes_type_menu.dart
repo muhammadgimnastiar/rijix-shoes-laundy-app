@@ -5,7 +5,7 @@ import 'package:rijix_laundy_app/theme/colors.dart';
 class ShoesItem extends StatelessWidget {
   var service = [
     "Schools Wash",
-    "Sneachers Wash",
+    "Sneakers Wash",
     "Work Wash",
     "Sport wash",
   ];
