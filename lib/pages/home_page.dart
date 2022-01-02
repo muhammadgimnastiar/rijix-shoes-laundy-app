@@ -15,33 +15,66 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: SingleChildScrollView(
+    return Container(
+      color: AppColor.white,
+      child: SafeArea(
+          child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            TopBar(),
+            InfoCard(),
+            ShoesItem(context),
+          ],
+        ),
+      )),
+    );
+  }
+}
+
+class TopBar extends StatelessWidget {
+  const TopBar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
       child: Column(
         children: [
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(20),
-            child: Text.rich(TextSpan(
-                text: "Selamat Datang\n\n",
+          Row(
+            children: [
+              Text.rich(TextSpan(
+                text: "Selamat Datang",
                 style: TextStyle(
                     color: AppColor.black,
                     fontWeight: FontWeight.w600,
                     fontSize: 16),
-                children: [
-                  TextSpan(
-                    text: "Muhammad Gimnastiar",
-                    style: TextStyle(
-                        color: AppColor.black,
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold),
-                  )
-                ])),
+              )),
+              SizedBox(
+                width: 5,
+              ),
+              Icon(
+                Icons.auto_awesome_rounded,
+                color: Colors.yellow,
+              ),
+            ],
           ),
-          InfoCard(),
-          ShoesItem(context),
+          Row(
+            children: [
+              Text.rich(TextSpan(
+                text: "Muhammad Gimnastiar",
+                style: TextStyle(
+                    color: AppColor.black,
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold),
+              )),
+            ],
+          )
         ],
       ),
-    ));
+    );
   }
 }

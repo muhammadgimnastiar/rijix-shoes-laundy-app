@@ -155,7 +155,7 @@ class _DetailPageState extends State<DetailPage> {
                     delay: 150),
                 option(
                     image: 'sneakers.png',
-                    name: 'Short',
+                    name: 'Sneakers wash',
                     price: '15.000',
                     type: 'sneakers',
                     delay: 300),
@@ -172,8 +172,14 @@ class _DetailPageState extends State<DetailPage> {
                     type: 'sport',
                     delay: 600),
                 FadeAnimation(
+                  delay: 890,
+                  child: SizedBox(
+                    height: 20,
+                  ),
+                ),
+                FadeAnimation(
                   delay: 900,
-                  child: Text('Total Price: Rp $totalPrice',
+                  child: Text('Total Pesanan: Rp $totalPrice',
                       style: GoogleFonts.inter(
                           fontSize: 24,
                           fontWeight: FontWeight.w700,

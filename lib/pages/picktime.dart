@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rijix_laundy_app/theme/colors.dart';
 import 'package:rijix_laundy_app/utils/fade_animation.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -131,14 +132,14 @@ class _PickTimePageState extends State<PickTimePage> {
                             child: Container(
                               margin: const EdgeInsets.only(right: 4),
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(30),
                                   color: selectedTime == index
-                                      ? Colors.blue.shade50
+                                      ? AppColor.greenbg
                                       : Colors.white,
                                   border: Border.all(
                                       color: selectedTime == index
-                                          ? Colors.blue
-                                          : Colors.grey.shade300,
+                                          ? AppColor.green
+                                          : AppColor.greenbg,
                                       width: 2)),
                               height: 50,
                               width: 100,
@@ -173,7 +174,7 @@ class _PickTimePageState extends State<PickTimePage> {
                         width: double.infinity,
                         decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(12)),
+                            borderRadius: BorderRadius.circular(30)),
                         child: Row(
                           children: [
                             Row(
@@ -190,7 +191,7 @@ class _PickTimePageState extends State<PickTimePage> {
                                       decoration: BoxDecoration(
                                           shape: BoxShape.circle,
                                           color: isColored
-                                              ? Colors.blue
+                                              ? AppColor.green
                                               : Colors.grey.shade300),
                                       child: const Center(
                                           child: Icon(
@@ -224,7 +225,7 @@ class _PickTimePageState extends State<PickTimePage> {
                                       decoration: BoxDecoration(
                                           shape: BoxShape.circle,
                                           color: !isColored
-                                              ? Colors.blue
+                                              ? AppColor.green
                                               : Colors.grey.shade300),
                                       child: const Center(
                                           child: Icon(
@@ -291,11 +292,11 @@ class _PickTimePageState extends State<PickTimePage> {
               height: 60,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.circular(12),
+                color: AppColor.green,
+                borderRadius: BorderRadius.circular(30),
               ),
               child: Center(
-                child: Text('Done',
+                child: Text('Order',
                     style: GoogleFonts.inter(
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
