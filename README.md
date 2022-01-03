@@ -2,8 +2,8 @@
 
 ## Progress
 <p style="float: left;">
-  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/home.png" width="40%" height="812px"/>
-  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/order_detail.png" width="40%" height="812px"/>
+  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/home.png" width="40%" />
+  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/order_detail.png" width="40%" />
   
 </p>
 
@@ -12,7 +12,7 @@
 ## Getting Started
 
 ```
-git clone https://github.com/afifudinn/flutter-laundry-app
+git clone https://github.com/afifudinn/flutter-laundry-app flutter-laundry-app
 cd flutter-laundry-app
 flutter pub get
 flutter run
