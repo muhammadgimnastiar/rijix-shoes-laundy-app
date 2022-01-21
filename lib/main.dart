@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rijix_laundy_app/pages/details.dart';
 import 'package:rijix_laundy_app/pages/home_page.dart';
 import 'package:rijix_laundy_app/pages/picktime.dart';
+import 'package:rijix_laundy_app/pages/profile_page.dart';
 import 'package:rijix_laundy_app/pages/test_page.dart';
 import 'package:rijix_laundy_app/pages/transaksi._page.dart';
 import 'package:rijix_laundy_app/utils/slide_route.dart';
@@ -32,11 +33,7 @@ class _MyAppState extends State<MyApp> {
   final screen = [
     HomePage(),
     TransaksiPage(),
-    Center(
-        child: Text(
-      "Acount",
-      style: TextStyle(fontSize: 72),
-    )),
+    ProfilePage(),
   ];
 
   final List<Map<String, String>> services = [
