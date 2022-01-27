@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:rijix_laundy_app/models/trasnsaksi.dart';
 import 'package:rijix_laundy_app/pages/details.dart';
 import 'package:rijix_laundy_app/pages/home_page.dart';
 import 'package:rijix_laundy_app/pages/picktime.dart';
 import 'package:rijix_laundy_app/pages/profile_page.dart';
-import 'package:rijix_laundy_app/pages/test_page.dart';
+import 'package:rijix_laundy_app/pages/spalsh_page.dart';
 import 'package:rijix_laundy_app/pages/transaksi._page.dart';
 import 'package:rijix_laundy_app/utils/slide_route.dart';
 import 'package:rijix_laundy_app/theme/colors.dart';
 
+int splash = 0;
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: (settings) {
@@ -16,6 +18,10 @@ void main() => runApp(MaterialApp(
         } else if (settings.name == '/picktime') {
           return RouteAnimation.slide(settings, const PickTimePage());
         }
+        if (splash == 0) {
+          return RouteAnimation.slide(settings, const SplashScreen());
+        }
+
         return RouteAnimation.slide(settings, const MyApp());
       },
     ));
@@ -30,6 +36,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int indexnav = 0;
 
+  _MyAppState();
   final screen = [
     HomePage(),
     TransaksiPage(),
@@ -49,7 +56,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.whitebg,
-      body: screen[indexnav],
+      body: screen[navbarIndex],
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
             backgroundColor: Colors.white,
@@ -62,11 +69,10 @@ class _MyAppState extends State<MyApp> {
             )),
         child: NavigationBar(
           height: 67,
-          selectedIndex: indexnav,
+          selectedIndex: navbarIndex,
           labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           animationDuration: Duration(seconds: 1),
-          onDestinationSelected: (indexnav) =>
-              setState(() => this.indexnav = indexnav),
+          onDestinationSelected: (index) => setState(() => navbarIndex = index),
           destinations: [
             NavigationDestination(
               icon: Icon(
@@ -105,9 +111,5 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
     );
-  }
-
-  getWidget() {
-    return (indexnav == 0) ? HomePage() : Container();
   }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:rijix_laundy_app/pages/transaksi._page.dart';
 import 'package:rijix_laundy_app/theme/colors.dart';
 import 'package:rijix_laundy_app/utils/fade_animation.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rijix_laundy_app/models/trasnsaksi.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({Key? key}) : super(key: key);
@@ -18,6 +20,10 @@ class _DetailPageState extends State<DetailPage> {
     'sport': {'price': 13000, 'total': 0},
   };
   int totalPrice = 0;
+  int totalCount = 0;
+  String typeorder = "";
+
+  List<Widget> list = [];
 
   //////////////////////////////
   /// @withflutter
@@ -30,7 +36,7 @@ class _DetailPageState extends State<DetailPage> {
         {String? image,
         String? name,
         String? price,
-        String? type,
+        String type = "",
         int? delay}) {
       return FadeAnimation(
         delay: delay,
@@ -69,6 +75,7 @@ class _DetailPageState extends State<DetailPage> {
                       if (order[type]!['total'] != 0) {
                         order[type]!['total'] = order[type]!['total']! - 1;
                         totalPrice = totalPrice - order[type]!['price']!;
+                        totalCount = totalCount - 1;
                       }
                     });
                   },
@@ -102,6 +109,8 @@ class _DetailPageState extends State<DetailPage> {
                     setState(() {
                       order[type]!['total'] = order[type]!['total']! + 1;
                       totalPrice = totalPrice + order[type]!['price']!;
+                      totalCount = totalCount + 1;
+                      typeorder = type;
                     });
                   },
                   child: Container(
@@ -191,7 +200,13 @@ class _DetailPageState extends State<DetailPage> {
         ),
         bottomNavigationBar: GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, '/picktime');
+            navbarIndex = 1;
+            totalTransaksi = totalTransaksi + 1;
+            Navigator.pushNamed(context, '/transaksi');
+            transaksiList.add(transaksiCard(
+                typeorder, "$totalCount", '$totalPrice', "Progress"));
+
+            //Navigator.pushNamed(context, '/picktime');
           },
           child: FadeAnimation(
             delay: 1200,

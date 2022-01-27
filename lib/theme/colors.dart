@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 @immutable
 abstract class AppColor {
-
   static final green = new Color(0xFF6DC1A4);
   static final blue = new Color(0xFF87D1E2);
   static final purple = new Color(0xFFA6AAD1);
@@ -12,5 +11,7 @@ abstract class AppColor {
   static final grey = new Color(0xFF878787);
   static final white = new Color(0xFFFFFFFF);
   static final black = new Color(0xFF000000);
+  static final orange = new Color(0xFFFFB125);
+  static final orangebg = new Color(0xFFFCF0D5);
   AppColors();
 }

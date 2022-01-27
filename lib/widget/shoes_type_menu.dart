@@ -21,7 +21,6 @@ class ShoesItem extends StatelessWidget {
   Widget build(BuildContext context) {
     //widget khusus buat nambilin item tipe sepatu di halaman home
     return Container(
-      height: 480,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: AppColor.whitebg,
@@ -75,10 +74,6 @@ class ShoesItem extends StatelessWidget {
                   ),
                 );
               }),
-          SizedBox(
-            height: 30,
-          ),
-          Text.rich(TextSpan(text: "Made With Love, By Rijix IF UMM")),
         ],
       ),
     );

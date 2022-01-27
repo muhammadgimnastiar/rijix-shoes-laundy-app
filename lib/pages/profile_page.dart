@@ -28,56 +28,57 @@ class ProfilePage extends StatelessWidget {
             height: 30,
           ),
           ProfileHeader(),
-          Container(
-            width: double.infinity,
-            height: 390,
-            decoration: BoxDecoration(
-                color: AppColor.whitebg,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
-                )),
-            child: Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.all(20),
-                  height: 40,
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  decoration: BoxDecoration(
-                    color: AppColor.green,
-                    borderRadius: BorderRadius.circular(30),
-                    border: Border.all(
-                        color: AppColor.black, style: BorderStyle.solid),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.1),
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
-                      ),
-                    ],
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  color: AppColor.whitebg,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  )),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.all(20),
+                    height: 40,
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    decoration: BoxDecoration(
+                      color: AppColor.green,
+                      borderRadius: BorderRadius.circular(30),
+                      border: Border.all(
+                          color: AppColor.black, style: BorderStyle.solid),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.1),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Identitas",
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: AppColor.white),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Identitas",
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: AppColor.white),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                ),
-                Label("Nama"),
-                Field("Muhammad Gimnastiar"),
-                Label("Asal"),
-                Field("Tabalong"),
-                Label("Pekerjaan"),
-                Field("Mahasiswa"),
-              ],
+                  Label("Nama"),
+                  Field("Muhammad Gimnastiar"),
+                  Label("Asal"),
+                  Field("Tabalong"),
+                  Label("Pekerjaan"),
+                  Field("Mahasiswa"),
+                ],
+              ),
             ),
           ),
         ],
@@ -94,13 +95,16 @@ class Field extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10),
-      child: Text(field,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.normal,
-          )),
+    return Container(
+      width: double.infinity,
+      child: Padding(
+        padding: EdgeInsets.only(top: 10, bottom: 10, left: 40),
+        child: Text(field,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.normal,
+            )),
+      ),
     );
   }
 }
@@ -113,15 +117,18 @@ class Label extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 20, bottom: 10),
-      child: Text(
-        label,
-        style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
+    return Container(
+      width: double.infinity,
+      child: Padding(
+        padding: EdgeInsets.only(top: 20, bottom: 10, left: 40),
+        child: Text(
+          label,
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.left,
         ),
-        textAlign: TextAlign.left,
       ),
     );
   }

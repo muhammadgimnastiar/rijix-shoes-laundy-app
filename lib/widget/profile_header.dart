@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rijix_laundy_app/models/trasnsaksi.dart';
 
 class ProfileHeader extends StatefulWidget {
   @override
@@ -38,9 +39,9 @@ class Profile_HeaderState extends State<ProfileHeader> {
           padding: const EdgeInsets.only(bottom: 30),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               Text(
-                "0 x Transaksi",
+                '$totalTransaksi x Transaksi',
                 style: TextStyle(fontSize: 18),
                 textAlign: TextAlign.right,
               ),
