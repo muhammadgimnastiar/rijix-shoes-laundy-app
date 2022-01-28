@@ -4,6 +4,7 @@ import 'package:rijix_laundy_app/theme/colors.dart';
 import 'package:rijix_laundy_app/utils/fade_animation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rijix_laundy_app/models/trasnsaksi.dart';
+import 'package:rijix_laundy_app/widget/transaksi_success.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({Key? key}) : super(key: key);
@@ -200,11 +201,24 @@ class _DetailPageState extends State<DetailPage> {
         ),
         bottomNavigationBar: GestureDetector(
           onTap: () {
+            print("OK");
             navbarIndex = 1;
             totalTransaksi = totalTransaksi + 1;
-            Navigator.pushNamed(context, '/transaksi');
+
             transaksiList.add(transaksiCard(
                 typeorder, "$totalCount", '$totalPrice', "Progress"));
+            showModalBottomSheet(
+                isScrollControlled: true,
+                shape: RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.vertical(top: Radius.circular(20))),
+                context: context,
+                builder: (context) => SuccessCheckout());
+
+            //navbarIndex = 1;
+            //totalTransaksi = totalTransaksi + 1;
+            //Navigator.pushNamed(context, '/transaksi');
+            //transaksiList.add(transaksiCard(typeorder, "$totalCount", '$totalPrice', "Progress"));
 
             //Navigator.pushNamed(context, '/picktime');
           },
@@ -219,7 +233,7 @@ class _DetailPageState extends State<DetailPage> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: AppColor.green,
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(15),
                 ),
                 child: Center(
                   child: Text('Checkout',
