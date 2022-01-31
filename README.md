@@ -38,14 +38,17 @@ flutter run
 code .
 ```
 
+## Copyright
+Copyright(c) 2022
+* Kewirausahaan Berbasis Teknologi 2021/2022
+* Rijix Shos Laundy App<br>
+  *	Muhammad Gimnastiar 		(202010370311041)<br>
+  *	Muhammad Arsya S       (201910370311447) <br>
+  *	Edo Juni Nur Riskia P    (201910370311249) <br>
+* Dosen Pengampu Syaifuddin,.S.kom,.M.kom
+* Universitas Muhammadiyah Malang
 
 
 
-
-
-
-<p align="center">
-  <img src="https://avatars.githubusercontent.com/u/51034829?s=400&u=af173be992703933cf04d8e1d997673e48511a7b&v=4" width=100/>
-</p>
 
 
