@@ -10,15 +10,22 @@ Rijix Shoes Laundry adalah bisnis yang bergerak jasa pencucian sepatu yang mengg
 
 ## Features
 #### Framework
-Dalam pembuatan aplikasi Rijix Shoes Laundy app ini, kami menggunakan framework flutter berbasis bahasa pemprograman dart.
+Dalam pembuatan aplikasi Rijix Shoes Laundy app ini, kami menggunakan framework [flutter](https://flutter.dev/) berbasis bahasa pemprograman dart.
 
 #### Fitur
 Fitur utama yang kami tawarkan yaitu pemesanan yang mudah dan simpel. Aplikasi ini memiliki 3 halaman utama, yaitu halaman homescreen, halaman transaksi, dan halaman profile
 <p style="float: left;">
-  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/home.png" width="30%" />
-  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/transaksi.png" width="30%" />
-  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/profile.png" width="30%" />
+  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/home.png" width="33%" />
+  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/transaksi.png" width="33%" />
+  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/profile.png" width="33%" />
   
+</p>
+
+dan ada Halaman tambahan sperti spalsh screen, detail order, dan popus saat transaksi berhasil
+<p style="floar: left;">
+	<img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/splash_screen.png" width="33%"/>
+	<img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/order_detail.png" width="33%"/>
+	<img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/succes_order.png" width="33%"/>
 </p>
 
 ## Instalation
