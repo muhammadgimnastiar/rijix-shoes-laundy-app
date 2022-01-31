@@ -28,7 +28,7 @@ dan ada Halaman tambahan sperti spalsh screen, detail order, dan popus saat tran
 	<img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/succes_order.png" width="30%"/>
 </p>
 
-## Instalation
+## Instalation and Configuration
 
 ```
 git clone https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app.git flutter-laundry-app
