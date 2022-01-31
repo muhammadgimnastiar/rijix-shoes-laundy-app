@@ -15,8 +15,9 @@ Dalam pembuatan aplikasi Rijix Shoes Laundy app ini, kami menggunakan framework 
 #### Fitur
 Fitur utama yang kami tawarkan yaitu pemesanan yang mudah dan simpel. Aplikasi ini memiliki 3 halaman utama, yaitu halaman homescreen, halaman transaksi, dan halaman profile
 <p style="float: left;">
-  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/home.png" width="40%" />
-  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/order_detail.png" width="40%" />
+  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/home.png" width="30%" />
+  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/transaksi.png" width="30%" />
+  <img src="https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app/blob/main/screenshots/profile.png" width="30%" />
   
 </p>
 
