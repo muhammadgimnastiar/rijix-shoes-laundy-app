@@ -31,11 +31,11 @@ dan ada Halaman tambahan sperti spalsh screen, detail order, dan popus saat tran
 ## Instalation
 
 ```
-git clone https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app.git flutter-laundry-app
-cd flutter-laundry-app
-flutter pub get
-flutter run
-code .
+$ git clone https://github.com/muhammadgimnastiar/rijix-shoes-laundy-app.git flutter-laundry-app
+$ cd flutter-laundry-app
+$ flutter pub get
+$ flutter run
+$ code .
 ```
 
 ## Copyright
