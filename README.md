@@ -39,8 +39,8 @@ code .
 ```
 
 ## Copyright
-Copyright(c) 2022
-* Kewirausahaan Berbasis Teknologi 2021/2022
+Made by RijixTeamUMM &copy; 2022
+* Kewirausahaan Berbasis Teknologi
 * Rijix Shos Laundy App<br>
   *	Muhammad Gimnastiar 		(202010370311041)<br>
   *	Muhammad Arsya S       (201910370311447) <br>
